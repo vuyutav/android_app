@@ -74,7 +74,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 // DI for repositories / services (placeholder)
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 // (Implementations will be added later.)
