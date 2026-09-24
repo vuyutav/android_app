@@ -1,8 +1,8 @@
 package com.schoolminimarket.app.repository
 
 import com.schoolminimarket.app.model.ProductDto
+import com.schoolminimarket.app.model.ProductDetailDto
 import com.schoolminimarket.app.model.PagedResult
-import kotlinx.coroutines.flow.Flow
 
 interface ProductRepository {
     suspend fun getProducts(
@@ -12,4 +12,7 @@ interface ProductRepository {
         size: Int = 20,
         token: String
     ): PagedResult<ProductDto>
+
+    suspend fun getProductDetail(productId: String, token: String): ProductDetailDto
 }
+

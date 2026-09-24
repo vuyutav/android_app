@@ -25,4 +25,8 @@ class ProductRepositoryImpl @Inject constructor(
             token = authHeader
         )
     }
+    override suspend fun getProductDetail(productId: String, token: String): ProductDetailDto {
+        val authHeader = "Bearer $token"
+        return apiService.getProductDetail(productId, authHeader)
+    }
 }
