@@ -15,6 +15,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.schoolminimarket.app.ui.theme.SchoolMinimarketTheme
 import com.schoolminimarket.app.ui.screens.HomeScreen
+import com.schoolminimarket.app.ui.screens.ProductListScreen
+import com.schoolminimarket.app.ui.screens.ProductDetailScreen
+import com.schoolminimarket.app.ui.screens.CartScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +41,12 @@ fun AppNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
+        composable("product_list") { ProductListScreen(navController) }
+        composable("product_detail/{productId}") { backStackEntry ->
+            val productId = backStackEntry.arguments?.getString("productId") ?: ""
+            ProductDetailScreen(navController, productId)
+        }
+        composable("cart") { CartScreen(navController) }
         // Future destinations: products, orders, notifications, profile
     }
 }
