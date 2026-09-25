@@ -45,10 +45,10 @@ interface ApiService {
         @Header("Authorization") token: String
     )
 
-    @POST("orders")
-    suspend fun createOrder(
-        @Header("Idempotency-Key") idempotencyKey: String,
-        @Body request: OrderCreateRequest,
+    // Payment info (QR code)
+    @GET("payments/{orderId}")
+    suspend fun getPaymentInfo(
+        @Path("orderId") orderId: String,
         @Header("Authorization") token: String
-    ): OrderCreateResponse
+    ): com.schoolminimarket.app.model.PaymentInfoDto
 }

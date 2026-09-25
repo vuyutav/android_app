@@ -22,5 +22,5 @@ abstract class RepositoryModule {
     abstract fun bindCartRepository(impl: CartRepositoryImpl): CartRepository
 
     @Binds
-    abstract fun bindOrderRepository(impl: OrderRepositoryImpl): OrderRepository
+    abstract fun bindPaymentRepository(impl: PaymentRepositoryImpl): PaymentRepository
 }
