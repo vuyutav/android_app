@@ -10,8 +10,12 @@ class OrderRepositoryImpl @Inject constructor(
 ) : OrderRepository {
     override suspend fun createOrder(request: OrderCreateRequest, token: String): OrderCreateResponse {
         val authHeader = "Bearer $token"
-        // Idempotency key could be generated here; for simplicity using UUID placeholder
         val idempotencyKey = java.util.UUID.randomUUID().toString()
         return apiService.createOrder(idempotencyKey, request, authHeader)
+    }
+
+    override suspend fun getOrderStatus(orderId: String, token: String): com.schoolminimarket.app.model.OrderStatusDto {
+        val authHeader = "Bearer $token"
+        return apiService.getOrderStatus(orderId, authHeader)
     }
 }
