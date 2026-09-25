@@ -18,6 +18,7 @@ import com.schoolminimarket.app.ui.screens.HomeScreen
 import com.schoolminimarket.app.ui.screens.ProductListScreen
 import com.schoolminimarket.app.ui.screens.ProductDetailScreen
 import com.schoolminimarket.app.ui.screens.CartScreen
+import com.schoolminimarket.app.ui.screens.PaymentScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
