@@ -5,6 +5,9 @@ import com.schoolminimarket.app.repository.CartRepository
 import com.schoolminimarket.app.repository.CartRepositoryImpl
 import com.schoolminimarket.app.repository.OrderRepository
 import com.schoolminimarket.app.repository.OrderRepositoryImpl
+
+    @Binds
+    abstract fun bindOrderRepository(impl: OrderRepositoryImpl): OrderRepository
 import com.schoolminimarket.app.repository.ProductRepository
 import com.schoolminimarket.app.repository.ProductRepositoryImpl
 import dagger.Binds
