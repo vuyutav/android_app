@@ -47,6 +47,7 @@ fun AppNavigation() {
             ProductDetailScreen(navController, productId)
         }
         composable("cart") { CartScreen(navController) }
+        composable("checkout") { CheckoutScreen(navController) }
         // Future destinations: products, orders, notifications, profile
     }
 }

@@ -50,7 +50,7 @@ fun CartScreen(navController: NavHostController) {
                         style = androidx.compose.material3.MaterialTheme.typography.titleMedium
                     )
                     Spacer(modifier = Modifier.height(12.dp))
-                    Button(onClick = { /* TODO: navigate to checkout */ }) {
+                    Button(onClick = { navController.navigate("checkout") }) {
                         Text(text = "Checkout")
                     }
                 }
